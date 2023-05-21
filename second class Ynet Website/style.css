@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Assistant", sans-serif;
+}
+
+.MainContainer {
+  margin: auto;
+  width: 90%;
+  max-width: 48rem;
+  border-width: 2px;
+  border-color: grey;
+  border-style: solid;
+  direction: rtl;
+  margin-bottom: 20px;
+}
+
+.firstPic {
+  margin: auto;
+  width: 100%;
+}
+.MainContainer > h1 {
+  font-family: "Assistant", sans-serif;
+  font-weight: 800;
+  font-size: min(3.5vw,30px);
+  padding: 0.3rem 1rem;
+  margin-bottom: 0px;
+}
+.MainContainer > p {
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+  margin-top: 0px;
+  padding: 0.3rem 1rem;
+  font-size: min(2.5vw,25px);
+
+}
+.MainContainer > span {
+  font-family: "Assistant", sans-serif;
+  font-weight: 700;
+  font-size: min(2vw,18px);
+  margin-top: 0px;
+  padding: 0.3rem 1rem;
+  color: grey;
+}
+.topNews{
+    padding: 1rem 1rem 0rem 1rem;
+}
+.forthtopnews,
+.secondTopNews,
+.FirstTopNews {
+  direction: rtl;
+  display: flex;
+  flex-grow: 1;
+  margin-top: 10px;
+}
+.forthtopnews img,
+.secondTopNews img,
+.FirstTopNews img {
+  width: 40%;
+}
+.FirstTopNews div {
+  padding: 1rem;
+  background-color: red;
+  flex-grow: 1;
+}
+.secondTopNews div {
+  padding: 1rem;
+  background-color: blue;
+  flex-grow: 1;
+}
+.forthtopnews div {
+  padding: 1rem;
+  background-color: rgb(11, 11, 84);
+  flex-grow: 1;
+}
+
+.forthtopnews div h2,
+.secondTopNews div h2,
+.FirstTopNews div h2 {
+  color: white;
+  font-size: min(3vw,25px);
+}
+.forthtopnews div p,
+.secondTopNews div p,
+.FirstTopNews div p {
+  padding: 0;
+  margin-top: 0.5rem;
+  color: white;
+  font-size: min(2vw,23px);
+
+}
+.lastNewsTop{
+    margin-top: 4rem;
+    display: flex;
+    direction: rtl;
+}
+.lastNewsTop img{
+    width: 25%;
+    margin-left: 1rem;
+}
+.lastNewsTop p{
+    font-family: "Assistant", sans-serif;
+    font-weight: 800;
+    padding: 0.3rem;
+    font-size: min(2.5vw,20px);
+  }
+.topHeading{
+    direction: rtl;
+    display: flex;
+    background-color: red;
+    color: white;
+    padding:0.2rem 2rem;
+    justify-content: space-between;
+}
+.mahaduratHaerevNews{
+    border-right-style:dotted;
+    margin: 1rem;
+    border-right-color: grey;
+    border-right-width: 2px;
+    font-weight: bolder;
+    padding-right: 1rem;
+}
+.mahaduratHaerevNews h4{
+  font-size: min(2.5vw,22px);
+}
+.topSecondHeading{
+  direction: rtl;
+  display: flex;
+  background-color: red;
+  color: white;
+  padding:0.2rem 2rem;
+  margin: 0 -1rem;
+  justify-content: space-between;
+}
+.mivzakim{
+  padding: 0 1rem;
+}
+.mivzakim h1{
+  font-family: "Assistant", sans-serif;
+  font-weight: 800;
+  margin-bottom: 0px;
+  font-size: min(3.5vw,30px);
+}
+.mivzakim > img{
+  object-fit: fill;
+  margin-top: 4rem;
+  max-width: 100%;
+}
+.author{
+  display: flex;
+  margin: 0.7rem 0;;
+  align-items: center;
+  padding-bottom: 0.7rem;
+  border-width: 1px;
+  border-color: grey;
+  gap: 1rem;
+  border-bottom-style: solid;
+
+}
+.author > img{
+  width: min( 6vw , 45px);
+  font-size: 1rem;
+}
+.author > p{
+  font-size: min(2.2vw,16px);
+}
+.mivzakinNews{
+  display: flex;
+  margin: 0.5rem 0;
+}
+.mivzakinNews img{
+  width: 25%;
+  margin-left: 1rem;
+}
+.mivzakinNews p{
+  font-family: "Assistant", sans-serif;
+  font-weight: 800;
+  padding: 0.1rem;
+  font-size: min(2.5vw,21px);
+}
+.mivzakinNews span{
+  font-size: min(2.2vw,20px);
+}
+.mivzakinNewslast{
+  display: flex;
+  margin: 0.5rem 0 0.5rem 0;
+}
+.mivzakinNewslast img{
+  width: 25%;
+  margin-left: 1rem;
+}
+.mivzakinNewslast p{
+  font-family: "Assistant", sans-serif;
+  font-weight: 800;
+  padding: 0.1rem;
+  font-size: min(2.5vw,21px);
+}
+footer{
+  background-color: black;
+}
+.ynetFooterLogo{
+  display: block;
+  margin: 0 auto;
+  width: min(20vw, 160px);
+}
+.footerNews{
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 1rem;
+}
+.FooterNewsIndevidualDiv {
+  width: 45%;
+
+}
+.FooterNewsIndevidualDiv img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.FooterNewsIndevidualDiv h3{
+  color: white;
+  font-size: min(2.7vw,18px);
+
+}
+.FooterNewsIndevidualDiv p{
+  color: rgb(182, 182, 182);
+  font-size: min(2.5vw,16px);
+
+}
