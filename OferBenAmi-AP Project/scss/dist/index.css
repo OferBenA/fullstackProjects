@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #3b4046;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  background-color: #343636;
+  padding: 10px 0;
+}
+
+.submitForm {
+  position: sticky;
+  margin-bottom: 5px;
+  top: 0px;
+  text-align: center;
+  background-color: #272222;
+  padding: 10px 0;
+  z-index: 3;
+}
+
+.apTable {
+  justify-content: space-between;
+  border: 1px solid wheat;
+  width: 100%;
+  border-spacing: 10px;
+  position: relative;
+}
+.apTable td {
+  border: 1px solid #bd8516;
+  text-align: center;
+}
