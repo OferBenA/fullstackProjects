@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600;700&display=swap");
 *,
 *::after,
 *::before {
@@ -22,7 +23,6 @@ header {
 
 .submitForm {
   position: sticky;
-  margin-bottom: 5px;
   top: 0px;
   text-align: center;
   background-color: #272222;
@@ -31,13 +31,17 @@ header {
 }
 
 .apTable {
-  justify-content: space-between;
-  border: 1px solid wheat;
+  border-collapse: collapse;
   width: 100%;
-  border-spacing: 10px;
-  position: relative;
+  padding: 1rem;
 }
-.apTable td {
-  border: 1px solid #bd8516;
-  text-align: center;
+.apTable th, .apTable td {
+  padding: 1rem;
+  text-align: left;
+}
+.apTable th {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.apTable tr:nth-of-type(2n) {
+  background-color: rgba(0, 0, 0, 0.1);
 }

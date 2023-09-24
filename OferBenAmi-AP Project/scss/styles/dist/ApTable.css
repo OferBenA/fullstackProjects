@@ -1,0 +1,15 @@
+.apTable {
+  border-collapse: collapse;
+  width: 100%;
+  padding: 1rem;
+}
+.apTable th, .apTable td {
+  padding: 1rem;
+  text-align: left;
+}
+.apTable th {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.apTable tr:nth-of-type(2n) {
+  background-color: rgba(0, 0, 0, 0.1);
+}

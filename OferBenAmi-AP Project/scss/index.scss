@@ -1,40 +1,17 @@
 @import "styles/fonts";
 @import "styles/mixins";
 @import "styles/config";
+
 body{
     background-color: rgb(59, 64, 70);
     color: white;
     font-family: 'Oswald', sans-serif;
-    // @include flexMid;
     position: relative;
 }
 
-header{
-    width: 100%;
-    text-align: center;
-    background-color: rgb(52, 54, 54);
-    padding: 10px 0;
-}
 
-.submitForm{
-    position: sticky;
-    margin-bottom: 5px;
-    top: 0px;
-    text-align: center;
-    background-color: rgb(39, 34, 34);
-    padding: 10px 0;
-    z-index: 3;
-}
-.apTable{
-    justify-content: space-between;
-    border: 1px solid wheat;
-    width: 100%;
-    border-spacing: 10px;
-    position: relative;
+@import "styles/header.scss";
+@import "styles/submitForm.scss";
+@import "styles/ApTable.scss";
 
-    td{
-        border: 1px solid rgb(189, 133, 22);
-        text-align: center;
-    }
-    
-}
+
