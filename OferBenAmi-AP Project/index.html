@@ -17,18 +17,18 @@
         </nav>
     </header>
     <form class="Form" onsubmit="submitForm(event)">
-        <label for="Vendor">Vendor name</label>
-        <input type="text" id="Vendor" name="Vendor">
-        <label for="Model">Model name</label>
-        <input type="text" id="Model" name="Model">
+        <label for="vendorName">Vendor name</label>
+        <input type="text" id="vendorName" name="vendorName" required>
+        <label for="modelName">Model name</label>
+        <input type="text" id="modelName" name="modelName" required>
         <label for="hostName">Host name</label>
-        <input type="text" id="hostName" name="hostName">
+        <input type="text" id="hostName" name="hostName" required>
         <label for="macAddr">Mac address</label>
-        <input type="text" id="macAddr" name="macAddr">
+        <input type="text" id="macAddr" name="macAddr" required>
         <label for="ipAddr">IP address</label>
-        <input type="text" id="ipAddr" name="ipAddr">
+        <input type="text" id="ipAddr" name="ipAddr" required>
         <label for="Version">Version</label>
-        <input type="text" id="Version" name="Version">
+        <input type="text" id="Version" name="Version" required>
         <input type="submit" class="submitButton" value="Submit">
     </form>
     <table class="apTable">
@@ -40,6 +40,8 @@
             <th>IP address</th>
             <th>Version</th>
         </tr>
+    
+
     </table>
 </body>
 
