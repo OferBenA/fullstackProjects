@@ -1,0 +1,32 @@
+"use strict";
+exports.__esModule = true;
+exports.pushRow = void 0;
+function pushRow(submittedApDetails) {
+    var apTable = document.querySelector(".apTable");
+    var newRow = document.createElement("tr");
+    var vendorNametd = document.createElement("td");
+    var modelNametd = document.createElement("td");
+    var hostNametd = document.createElement("td");
+    var macAddrtd = document.createElement("td");
+    var ipAddrtd = document.createElement("td");
+    var Versiontd = document.createElement("td");
+    var deletetd = document.createElement("td");
+    var deleteCheckBox = document.createElement("input");
+    deleteCheckBox.setAttribute("type", "checkBox");
+    deletetd.appendChild(deleteCheckBox);
+    vendorNametd.textContent = submittedApDetails.vendorName;
+    modelNametd.textContent = submittedApDetails.modelName;
+    hostNametd.textContent = submittedApDetails.hostName;
+    macAddrtd.textContent = submittedApDetails.macAddr;
+    ipAddrtd.textContent = submittedApDetails.ipAddr;
+    Versiontd.textContent = submittedApDetails.Version;
+    newRow.appendChild(vendorNametd);
+    newRow.appendChild(modelNametd);
+    newRow.appendChild(hostNametd);
+    newRow.appendChild(macAddrtd);
+    newRow.appendChild(ipAddrtd);
+    newRow.appendChild(Versiontd);
+    newRow.appendChild(deletetd);
+    apTable === null || apTable === void 0 ? void 0 : apTable.appendChild(newRow);
+}
+exports.pushRow = pushRow;

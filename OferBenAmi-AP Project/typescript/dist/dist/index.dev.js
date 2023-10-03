@@ -1,43 +1,28 @@
+"use strict";
 
-import { apDetailsEntry, formExtention } from "./classes/classesAndInterfaces";
-import { pushRow } from "./functions/pushRow";
+exports.__esModule = true;
 
-let jsonCounter: number = 0;
+var pushRow_1 = require("./functions/pushRow");
 
-// interface formExtention extends HTMLFormControlsCollection {
-// 	vendorName: HTMLInputElement;
-// 	modelName: HTMLInputElement;
-// 	hostName: HTMLInputElement;
-// 	macAddr: HTMLInputElement;
-// 	ipAddr: HTMLInputElement;
-// 	Version: HTMLInputElement;
-// }
+var jsonCounter = 0;
 
-
-function submitForm(event: SubmitEvent) {
-	event.preventDefault();
-	const elements = (event.target as HTMLFormElement).elements as formExtention;
-
-	let newEntry: apDetailsEntry = {
-		vendorName: elements.vendorName.value,
-		modelName: elements.modelName.value,
-		hostName: elements.hostName.value,
-		macAddr: elements.macAddr.value,
-		ipAddr: elements.ipAddr.value,
-		Version: elements.Version.value,
-	};
-	localStorage.setItem(`itemNum${jsonCounter++}`, JSON.stringify(newEntry))
-	console.log(newEntry)
-	pushRow(newEntry);
-}
-
-//view
-
-// function pushRow(submittedApDetails: apDetailsEntry) {
+function submitForm(event) {
+  event.preventDefault();
+  var elements = event.target.elements;
+  var newEntry = {
+    vendorName: elements.vendorName.value,
+    modelName: elements.modelName.value,
+    hostName: elements.hostName.value,
+    macAddr: elements.macAddr.value,
+    ipAddr: elements.ipAddr.value,
+    Version: elements.Version.value
+  };
+  localStorage.setItem("itemNum" + jsonCounter++, JSON.stringify(newEntry));
+  console.log(newEntry);
+  pushRow_1.pushRow(newEntry);
+} // function pushRow(submittedApDetails: apDetailsEntry) {
 // 	const apTable = document.querySelector(".apTable");
-
 // 	const newRow = document.createElement("tr");
-
 // 	const vendorNametd = document.createElement("td");
 // 	const modelNametd = document.createElement("td");
 // 	const hostNametd = document.createElement("td");
@@ -45,18 +30,15 @@ function submitForm(event: SubmitEvent) {
 // 	const ipAddrtd = document.createElement("td");
 // 	const Versiontd = document.createElement("td");
 // 	const deletetd = document.createElement("td");
-
 // 	const deleteCheckBox = document.createElement("input");
 // 	deleteCheckBox.setAttribute("type", "checkBox");
 // 	deletetd.appendChild(deleteCheckBox);
-
 // 	vendorNametd.textContent = submittedApDetails.vendorName;
 // 	modelNametd.textContent = submittedApDetails.modelName;
 // 	hostNametd.textContent = submittedApDetails.hostName;
 // 	macAddrtd.textContent = submittedApDetails.macAddr;
 // 	ipAddrtd.textContent = submittedApDetails.ipAddr;
 // 	Versiontd.textContent = submittedApDetails.Version;
-
 // 	newRow.appendChild(vendorNametd);
 // 	newRow.appendChild(modelNametd);
 // 	newRow.appendChild(hostNametd);
