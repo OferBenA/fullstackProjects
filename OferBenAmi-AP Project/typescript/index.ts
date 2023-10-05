@@ -1,17 +1,26 @@
 
-import { apDetailsEntry, formExtention } from "./classes/classesAndInterfaces";
-import { pushRow } from "./functions/pushRow";
-
+// import { apDetailsEntry, formExtention } from "./classes/classesAndInterfaces.js";
+// import { pushRow } from "./functions/pushRow.js";
+class apDetailsEntry {
+	constructor(
+		public vendorName: string,
+		public modelName: string,
+		public hostName: string,
+		public macAddr: string,
+		public ipAddr: string,
+		public Version: string,
+	) { }
+}
 let jsonCounter: number = 0;
 
-// interface formExtention extends HTMLFormControlsCollection {
-// 	vendorName: HTMLInputElement;
-// 	modelName: HTMLInputElement;
-// 	hostName: HTMLInputElement;
-// 	macAddr: HTMLInputElement;
-// 	ipAddr: HTMLInputElement;
-// 	Version: HTMLInputElement;
-// }
+interface formExtention extends HTMLFormControlsCollection {
+	vendorName: HTMLInputElement;
+	modelName: HTMLInputElement;
+	hostName: HTMLInputElement;
+	macAddr: HTMLInputElement;
+	ipAddr: HTMLInputElement;
+	Version: HTMLInputElement;
+}
 
 
 function submitForm(event: SubmitEvent) {
@@ -33,36 +42,36 @@ function submitForm(event: SubmitEvent) {
 
 //view
 
-// function pushRow(submittedApDetails: apDetailsEntry) {
-// 	const apTable = document.querySelector(".apTable");
+function pushRow(submittedApDetails: apDetailsEntry) {
+	const apTable = document.querySelector(".apTable");
 
-// 	const newRow = document.createElement("tr");
+	const newRow = document.createElement("tr");
 
-// 	const vendorNametd = document.createElement("td");
-// 	const modelNametd = document.createElement("td");
-// 	const hostNametd = document.createElement("td");
-// 	const macAddrtd = document.createElement("td");
-// 	const ipAddrtd = document.createElement("td");
-// 	const Versiontd = document.createElement("td");
-// 	const deletetd = document.createElement("td");
+	const vendorNametd = document.createElement("td");
+	const modelNametd = document.createElement("td");
+	const hostNametd = document.createElement("td");
+	const macAddrtd = document.createElement("td");
+	const ipAddrtd = document.createElement("td");
+	const Versiontd = document.createElement("td");
+	const deletetd = document.createElement("td");
 
-// 	const deleteCheckBox = document.createElement("input");
-// 	deleteCheckBox.setAttribute("type", "checkBox");
-// 	deletetd.appendChild(deleteCheckBox);
+	const deleteCheckBox = document.createElement("input");
+	deleteCheckBox.setAttribute("type", "checkBox");
+	deletetd.appendChild(deleteCheckBox);
 
-// 	vendorNametd.textContent = submittedApDetails.vendorName;
-// 	modelNametd.textContent = submittedApDetails.modelName;
-// 	hostNametd.textContent = submittedApDetails.hostName;
-// 	macAddrtd.textContent = submittedApDetails.macAddr;
-// 	ipAddrtd.textContent = submittedApDetails.ipAddr;
-// 	Versiontd.textContent = submittedApDetails.Version;
+	vendorNametd.textContent = submittedApDetails.vendorName;
+	modelNametd.textContent = submittedApDetails.modelName;
+	hostNametd.textContent = submittedApDetails.hostName;
+	macAddrtd.textContent = submittedApDetails.macAddr;
+	ipAddrtd.textContent = submittedApDetails.ipAddr;
+	Versiontd.textContent = submittedApDetails.Version;
 
-// 	newRow.appendChild(vendorNametd);
-// 	newRow.appendChild(modelNametd);
-// 	newRow.appendChild(hostNametd);
-// 	newRow.appendChild(macAddrtd);
-// 	newRow.appendChild(ipAddrtd);
-// 	newRow.appendChild(Versiontd);
-// 	newRow.appendChild(deletetd);
-// 	apTable?.appendChild(newRow);
-// }
+	newRow.appendChild(vendorNametd);
+	newRow.appendChild(modelNametd);
+	newRow.appendChild(hostNametd);
+	newRow.appendChild(macAddrtd);
+	newRow.appendChild(ipAddrtd);
+	newRow.appendChild(Versiontd);
+	newRow.appendChild(deletetd);
+	apTable?.appendChild(newRow);
+}
