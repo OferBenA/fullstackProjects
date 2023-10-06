@@ -9,9 +9,12 @@ class ApDetailsEntry {
 		public macAddr: string,
 		public ipAddr: string,
 		public Version: string,
+		public MarkedForDelete: boolean,
 	) { }
 }
-let localStorageName = "entries"
+const localStorageName = "entries";
+let entries = loadData();
+let activeItemIndex: number | null = null;
 
 interface formExtention extends HTMLFormControlsCollection {
 	vendorName: HTMLInputElement;
@@ -34,6 +37,7 @@ function submitForm(event: SubmitEvent) {
 		macAddr: elements.macAddr.value,
 		ipAddr: elements.ipAddr.value,
 		Version: elements.Version.value,
+		MarkedForDelete: false,
 	};
 
 	createAndPushRow(newEntry);
@@ -74,23 +78,23 @@ function createAndPushRow(submittedApDetails: ApDetailsEntry) {
 	newRow.appendChild(Versiontd);
 	newRow.appendChild(deletetd);
 	apTable?.appendChild(newRow);
-	console.dir(apTable);
+	// console.dir(apTable);
 
 }
 
 function deleteRow(event: Event) {
-	const apTable = document.querySelector(".apTable");
-	apTable?.childNodes.forEach((element, index) => {
-		if (element.nodeName == "TR") {
-
+	const deleteCheckboxConst = document?.querySelectorAll(".deleteCheckBox") as NodeListOf <HTMLInputElement>
+	deleteCheckboxConst.forEach( Element =>{
+		if(Element.checked){
+			Element.closest("tr")?.remove()
+			console.log(Element)
 		}
-		console.log
 	})
 }
 
-function loadData(): ApDetailsEntry[]{
+function loadData(): ApDetailsEntry[] {
 	const savedData = localStorage.getItem(localStorageName);
-	if(savedData){
+	if (savedData) {
 		return JSON.parse(savedData)
 	}
 	return new Array<ApDetailsEntry>();

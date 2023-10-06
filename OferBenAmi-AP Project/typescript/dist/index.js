@@ -1,17 +1,20 @@
 // import { apDetailsEntry, formExtention } from "./classes/classesAndInterfaces.js";
 // import { pushRow } from "./functions/pushRow.js";
 var ApDetailsEntry = /** @class */ (function () {
-    function ApDetailsEntry(vendorName, modelName, hostName, macAddr, ipAddr, Version) {
+    function ApDetailsEntry(vendorName, modelName, hostName, macAddr, ipAddr, Version, MarkedForDelete) {
         this.vendorName = vendorName;
         this.modelName = modelName;
         this.hostName = hostName;
         this.macAddr = macAddr;
         this.ipAddr = ipAddr;
         this.Version = Version;
+        this.MarkedForDelete = MarkedForDelete;
     }
     return ApDetailsEntry;
 }());
 var localStorageName = "entries";
+var entries = loadData();
+var activeItemIndex = null;
 function submitForm(event) {
     event.preventDefault();
     var elements = event.target.elements;
@@ -21,7 +24,8 @@ function submitForm(event) {
         hostName: elements.hostName.value,
         macAddr: elements.macAddr.value,
         ipAddr: elements.ipAddr.value,
-        Version: elements.Version.value
+        Version: elements.Version.value,
+        MarkedForDelete: false
     };
     createAndPushRow(newEntry);
 }
@@ -54,14 +58,16 @@ function createAndPushRow(submittedApDetails) {
     newRow.appendChild(Versiontd);
     newRow.appendChild(deletetd);
     apTable === null || apTable === void 0 ? void 0 : apTable.appendChild(newRow);
-    console.dir(apTable);
+    // console.dir(apTable);
 }
 function deleteRow(event) {
-    var apTable = document.querySelector(".apTable");
-    apTable === null || apTable === void 0 ? void 0 : apTable.childNodes.forEach(function (element, index) {
-        if (element.nodeName == "TR") {
+    var deleteCheckboxConst = document === null || document === void 0 ? void 0 : document.querySelectorAll(".deleteCheckBox");
+    deleteCheckboxConst.forEach(function (Element) {
+        var _a;
+        if (Element.checked) {
+            (_a = Element.closest("tr")) === null || _a === void 0 ? void 0 : _a.remove();
+            console.log(Element);
         }
-        console.log;
     });
 }
 function loadData() {
