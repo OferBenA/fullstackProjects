@@ -6,7 +6,7 @@
   padding: 3px 0;
   z-index: 3;
 }
-.Form .submitButton {
+.Form .button {
   background-color: white;
   color: black;
   border: 0;
@@ -14,10 +14,10 @@
   padding: 3px;
   transition: opacity 0.3s, color 0.3s, background-color 0.3s;
 }
-.Form .submitButton:hover {
+.Form .button:hover {
   opacity: 80%;
 }
-.Form .submitButton:active {
+.Form .button:active {
   background-color: #272222;
   color: white;
 }

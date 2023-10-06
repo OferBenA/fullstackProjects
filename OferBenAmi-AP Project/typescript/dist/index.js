@@ -1,7 +1,7 @@
 // import { apDetailsEntry, formExtention } from "./classes/classesAndInterfaces.js";
 // import { pushRow } from "./functions/pushRow.js";
-var apDetailsEntry = /** @class */ (function () {
-    function apDetailsEntry(vendorName, modelName, hostName, macAddr, ipAddr, Version) {
+var ApDetailsEntry = /** @class */ (function () {
+    function ApDetailsEntry(vendorName, modelName, hostName, macAddr, ipAddr, Version) {
         this.vendorName = vendorName;
         this.modelName = modelName;
         this.hostName = hostName;
@@ -9,9 +9,9 @@ var apDetailsEntry = /** @class */ (function () {
         this.ipAddr = ipAddr;
         this.Version = Version;
     }
-    return apDetailsEntry;
+    return ApDetailsEntry;
 }());
-var jsonCounter = 0;
+var localStorageName = "entries";
 function submitForm(event) {
     event.preventDefault();
     var elements = event.target.elements;
@@ -23,12 +23,10 @@ function submitForm(event) {
         ipAddr: elements.ipAddr.value,
         Version: elements.Version.value
     };
-    localStorage.setItem("itemNum" + jsonCounter++, JSON.stringify(newEntry));
-    console.log(newEntry);
-    pushRow(newEntry);
+    createAndPushRow(newEntry);
 }
 //view
-function pushRow(submittedApDetails) {
+function createAndPushRow(submittedApDetails) {
     var apTable = document.querySelector(".apTable");
     var newRow = document.createElement("tr");
     var vendorNametd = document.createElement("td");
@@ -40,6 +38,7 @@ function pushRow(submittedApDetails) {
     var deletetd = document.createElement("td");
     var deleteCheckBox = document.createElement("input");
     deleteCheckBox.setAttribute("type", "checkBox");
+    deleteCheckBox.classList.add("deleteCheckBox");
     deletetd.appendChild(deleteCheckBox);
     vendorNametd.textContent = submittedApDetails.vendorName;
     modelNametd.textContent = submittedApDetails.modelName;
@@ -55,4 +54,20 @@ function pushRow(submittedApDetails) {
     newRow.appendChild(Versiontd);
     newRow.appendChild(deletetd);
     apTable === null || apTable === void 0 ? void 0 : apTable.appendChild(newRow);
+    console.dir(apTable);
+}
+function deleteRow(event) {
+    var apTable = document.querySelector(".apTable");
+    apTable === null || apTable === void 0 ? void 0 : apTable.childNodes.forEach(function (element, index) {
+        if (element.nodeName == "TR") {
+        }
+        console.log;
+    });
+}
+function loadData() {
+    var savedData = localStorage.getItem(localStorageName);
+    if (savedData) {
+        return JSON.parse(savedData);
+    }
+    return new Array();
 }

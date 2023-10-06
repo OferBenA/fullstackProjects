@@ -1,7 +1,7 @@
 
 // import { apDetailsEntry, formExtention } from "./classes/classesAndInterfaces.js";
 // import { pushRow } from "./functions/pushRow.js";
-class apDetailsEntry {
+class ApDetailsEntry {
 	constructor(
 		public vendorName: string,
 		public modelName: string,
@@ -11,7 +11,7 @@ class apDetailsEntry {
 		public Version: string,
 	) { }
 }
-let jsonCounter: number = 0;
+let localStorageName = "entries"
 
 interface formExtention extends HTMLFormControlsCollection {
 	vendorName: HTMLInputElement;
@@ -27,7 +27,7 @@ function submitForm(event: SubmitEvent) {
 	event.preventDefault();
 	const elements = (event.target as HTMLFormElement).elements as formExtention;
 
-	let newEntry: apDetailsEntry = {
+	let newEntry: ApDetailsEntry = {
 		vendorName: elements.vendorName.value,
 		modelName: elements.modelName.value,
 		hostName: elements.hostName.value,
@@ -35,14 +35,13 @@ function submitForm(event: SubmitEvent) {
 		ipAddr: elements.ipAddr.value,
 		Version: elements.Version.value,
 	};
-	localStorage.setItem(`itemNum${jsonCounter++}`, JSON.stringify(newEntry))
-	console.log(newEntry)
-	pushRow(newEntry);
+
+	createAndPushRow(newEntry);
 }
 
 //view
 
-function pushRow(submittedApDetails: apDetailsEntry) {
+function createAndPushRow(submittedApDetails: ApDetailsEntry) {
 	const apTable = document.querySelector(".apTable");
 
 	const newRow = document.createElement("tr");
@@ -57,6 +56,7 @@ function pushRow(submittedApDetails: apDetailsEntry) {
 
 	const deleteCheckBox = document.createElement("input");
 	deleteCheckBox.setAttribute("type", "checkBox");
+	deleteCheckBox.classList.add("deleteCheckBox")
 	deletetd.appendChild(deleteCheckBox);
 
 	vendorNametd.textContent = submittedApDetails.vendorName;
@@ -74,4 +74,24 @@ function pushRow(submittedApDetails: apDetailsEntry) {
 	newRow.appendChild(Versiontd);
 	newRow.appendChild(deletetd);
 	apTable?.appendChild(newRow);
+	console.dir(apTable);
+
+}
+
+function deleteRow(event: Event) {
+	const apTable = document.querySelector(".apTable");
+	apTable?.childNodes.forEach((element, index) => {
+		if (element.nodeName == "TR") {
+
+		}
+		console.log
+	})
+}
+
+function loadData(): ApDetailsEntry[]{
+	const savedData = localStorage.getItem(localStorageName);
+	if(savedData){
+		return JSON.parse(savedData)
+	}
+	return new Array<ApDetailsEntry>();
 }
