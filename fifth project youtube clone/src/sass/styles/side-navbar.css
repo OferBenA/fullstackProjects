@@ -22,7 +22,7 @@
   height: 100vh;
 }
 .side-navbar-narrow__buttons {
-  background-color: #141516;
+  background-color: rgb(20, 21, 22);
   padding: 12px 0;
   font-weight: 300;
   color: white;
@@ -36,7 +36,7 @@
   border-radius: 13px;
 }
 .side-navbar-narrow__buttons:hover {
-  background-color: #393939;
+  background-color: rgb(57, 57, 57);
   cursor: pointer;
 }
 .side-navbar-narrow__buttons img {
@@ -58,10 +58,10 @@
 }
 .side-navbar-wide hr {
   margin: 10px 0;
-  border-color: #141516;
+  border-color: rgb(20, 21, 22);
 }
 .side-navbar-wide__buttons {
-  background-color: #141516;
+  background-color: rgb(20, 21, 22);
   color: white;
   font-weight: 300;
   font-family: "Roboto", sans-serif;
@@ -76,7 +76,7 @@
   margin: 1px 5px;
 }
 .side-navbar-wide__buttons:hover {
-  background-color: #393939;
+  background-color: rgb(57, 57, 57);
   cursor: pointer;
 }
 .side-navbar-wide__buttons img {
@@ -97,4 +97,4 @@
   .side-navbar-narrow {
     display: none;
   }
-}
+}/*# sourceMappingURL=side-navbar.css.map */

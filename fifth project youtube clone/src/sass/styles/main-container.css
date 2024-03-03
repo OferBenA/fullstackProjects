@@ -24,19 +24,19 @@
   color: white;
   font-size: 14px;
   flex-shrink: 0;
-  background-color: #2e3031;
+  background-color: rgb(46, 48, 49);
   border-radius: 10px;
   padding: 8px;
   margin: 5px 0;
   transition: background-color 0.3s;
 }
 .main-container__topsuggestions__buttons:hover {
-  background-color: #454747;
+  background-color: rgb(69, 71, 71);
   cursor: pointer;
 }
 .main-container__topsuggestions__buttons:focus, .main-container__topsuggestions__buttons:active {
-  background-color: white;
-  color: #0f0f0f;
+  background-color: rgb(255, 255, 255);
+  color: rgb(15, 15, 15);
 }
 .main-container__videos {
   display: grid;
@@ -79,10 +79,10 @@
 }
 .main-container__videos__video h4 {
   font-weight: 300;
-  color: #a5a5a5;
+  color: rgb(165, 165, 165);
 }
 .main-container__videos__video:active {
-  background-color: #393b3b;
+  background-color: rgb(57, 59, 59);
 }
 .main-container__videos__video .thumbnail-class {
   margin-bottom: 10px;
@@ -127,4 +127,4 @@
   .main-container {
     margin-left: 0;
   }
-}
+}/*# sourceMappingURL=main-container.css.map */
